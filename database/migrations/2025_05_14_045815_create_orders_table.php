@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('customer_name');
             $table->string('phone_number');
             $table->string('file_url')->nullable();
+            $table->string('file_name')->nullable();
             $table->string('product_type');
             $table->integer('quantity');
             $table->string('paper_type');

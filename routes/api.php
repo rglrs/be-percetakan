@@ -12,6 +12,8 @@ Route::get('/user', function (Request $request) {
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/dashboard/stats', [Api\DashboardController::class, 'getStats']);
+
     Route::get('/orders/history', [Api\OrderController::class, 'history']);
     Route::patch('/orders/{id}/progress', [Api\OrderController::class, 'updateOrderProgress']);
     Route::apiResource('orders', Api\OrderController::class);
